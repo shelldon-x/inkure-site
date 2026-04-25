@@ -2,6 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/404", "destination": "/404.html" },
+    { "source": "/:slug", "destination": "/pages/:slug.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/(.*)/", "destination": "/$1", "permanent": true },
+    { "source": "/pages/:slug.html", "destination": "/:slug", "permanent": true },
+    { "source": "/pages/:slug", "destination": "/:slug", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -45,13 +57,5 @@
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
       ]
     }
-  ],
-  "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/(.*)/", "destination": "/$1", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/404", "destination": "/404.html" }
   ]
 }
