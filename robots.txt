@@ -1,0 +1,35 @@
+# Inkure — Tattoo Skincare Premium
+# robots.txt — atualizado em abril 2026
+
+User-agent: *
+Allow: /
+Disallow: /assets/inkure.js$
+
+# Bots de IA — permitidos com moderação
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Bots agressivos — bloqueados
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://inkure.care/sitemap.xml
