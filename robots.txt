@@ -32,4 +32,4 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemap
-Sitemap: https://inkure.care/sitemap.xml
+Sitemap: https://inkure.com.br/sitemap.xml

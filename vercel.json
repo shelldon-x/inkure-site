@@ -3,27 +3,16 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/como-cuidar-da-tatuagem", "destination": "/pages/como-cuidar-da-tatuagem.html" },
-    { "source": "/como-hidratar-a-tatuagem", "destination": "/pages/como-hidratar-a-tatuagem.html" },
-    { "source": "/como-tatuagem-funciona-na-pele", "destination": "/pages/como-tatuagem-funciona-na-pele.html" },
-    { "source": "/manter-tatuagem-bonita", "destination": "/pages/manter-tatuagem-bonita.html" },
-    { "source": "/melhor-creme-para-tatuagem", "destination": "/pages/melhor-creme-para-tatuagem.html" },
-    { "source": "/o-que-nao-pode-fazer-depois-de-tatuar", "destination": "/pages/o-que-nao-pode-fazer-depois-de-tatuar.html" },
-    { "source": "/o-que-passar-na-tatuagem", "destination": "/pages/o-que-passar-na-tatuagem.html" },
-    { "source": "/pode-molhar-tatuagem", "destination": "/pages/pode-molhar-tatuagem.html" },
-    { "source": "/pode-pegar-sol-com-tatuagem", "destination": "/pages/pode-pegar-sol-com-tatuagem.html" },
-    { "source": "/produtos-para-tatuagem", "destination": "/pages/produtos-para-tatuagem.html" },
-    { "source": "/quanto-tempo-dura-tatuagem", "destination": "/pages/quanto-tempo-dura-tatuagem.html" },
-    { "source": "/quanto-tempo-tatuagem-cicatriza", "destination": "/pages/quanto-tempo-tatuagem-cicatriza.html" },
-    { "source": "/tatuagem-cicatrizacao-cuidados", "destination": "/pages/tatuagem-cicatrizacao-cuidados.html" },
-    { "source": "/tatuagem-descascando-e-normal", "destination": "/pages/tatuagem-descascando-e-normal.html" },
-    { "source": "/tatuagem-faz-mal", "destination": "/pages/tatuagem-faz-mal.html" },
-    { "source": "/tatuagem-inflamada", "destination": "/pages/tatuagem-inflamada.html" },
-    { "source": "/tipos-de-pele-tatuagem", "destination": "/pages/tipos-de-pele-tatuagem.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/404", "destination": "/404.html" },
+    { "source": "/:slug", "destination": "/pages/:slug.html" }
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/index", "destination": "/", "permanent": true }
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/(.*)/", "destination": "/$1", "permanent": true },
+    { "source": "/pages/:slug.html", "destination": "/:slug", "permanent": true },
+    { "source": "/pages/:slug", "destination": "/:slug", "permanent": true }
   ],
   "headers": [
     {
@@ -43,14 +32,28 @@
       ]
     },
     {
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|gif|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(html)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
       "source": "/sitemap.xml",
       "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
         { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
       ]
     }

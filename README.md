@@ -48,7 +48,7 @@ inkure/
 mv pages/*.html .
 rmdir pages
 ```
-URLs ficarão: `inkure.care/como-cuidar-da-tatuagem` (sem `.html` por causa do `cleanUrls: true`).
+URLs ficarão: `inkure.com.br/como-cuidar-da-tatuagem` (sem `.html` por causa do `cleanUrls: true`).
 
 **Opção B — manter em `/pages/` com rewrite:** adicione no `vercel.json`:
 ```json
