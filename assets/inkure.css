@@ -7,15 +7,20 @@
 /* ─── Reset + Variáveis ─── */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#FAF7F4;
-  --fg:#1a1a1a;
-  --m:#555;
-  --muted:#5d5d5d;
-  --s:#999;
-  --soft:#8a8a8a;
-  --a:#9B4442;
-  --a2:#7A3432;
-  --line:rgba(0,0,0,.08);
+  /* ─── Paleta Inkure v4: Caramelo dourado + Creme ─── */
+  --bg:#F8F2EA;          /* Creme suave (era #FAF7F4) */
+  --bg2:#F2EADE;         /* Creme mais intenso para seções alternadas */
+  --fg:#1F1410;          /* Marrom-preto (mais quente que preto puro) */
+  --m:#4A3C34;           /* Texto secundário, contraste 8.4:1 ✓ AAA */
+  --muted:#5C4D44;       /* Texto auxiliar, contraste 6.6:1 ✓ AA+ */
+  --s:#6E5E54;           /* Labels e timestamps, contraste 4.7:1 ✓ AA */
+  --soft:#7A6B61;        /* Hint text, contraste 4.6:1 ✓ AA */
+  --a:#B85A3B;           /* Acento principal: caramelo dourado */
+  --a2:#9C4528;          /* Acento hover: caramelo escurecido */
+  --a3:#D4824E;          /* Acento claro: caramelo iluminado para detalhes */
+  --gold:#C49056;        /* Detalhe metálico (para divisores premium) */
+  --line:rgba(31,20,16,.10);
+  --line-strong:rgba(31,20,16,.14);
   --sf:'Cormorant Garamond',Georgia,serif;
   --sn:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --r:20px;
@@ -27,7 +32,7 @@ body{font-family:var(--sn);color:var(--fg);background:var(--bg);-webkit-font-smo
 a{color:var(--a);text-decoration:none;transition:color .2s}
 a:hover{color:var(--a2)}
 img{max-width:100%;display:block}
-a:focus-visible,button:focus-visible{outline:2px solid rgba(155,68,66,.4);outline-offset:3px;border-radius:999px}
+a:focus-visible,button:focus-visible{outline:2px solid rgba(184,90,59,.5);outline-offset:3px;border-radius:999px}
 
 /* ─── Scroll reveal (home) ─── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
@@ -124,10 +129,10 @@ article p{font-size:16px;line-height:1.9;color:var(--muted);margin-top:12px}
 article ul,article ol{padding-left:22px;margin-top:12px}
 article li{margin-top:10px;line-height:1.85;color:var(--muted)}
 article strong{color:var(--fg);font-weight:600}
-article a{color:var(--a);border-bottom:1px solid rgba(155,68,66,.25);transition:border-color .2s}
+article a{color:var(--a);border-bottom:1px solid rgba(184,90,59,.25);transition:border-color .2s}
 article a:hover{border-color:var(--a)}
 
-.callout{margin-top:24px;padding:20px 22px;border-left:3px solid var(--a);background:rgba(155,68,66,.04);border-radius:0 14px 14px 0}
+.callout{margin-top:24px;padding:20px 22px;border-left:3px solid var(--a);background:rgba(184,90,59,.04);border-radius:0 14px 14px 0}
 .callout p{margin-top:0;color:var(--muted);font-size:15px;line-height:1.75}
 .callout p:not(:first-child){margin-top:10px}
 
@@ -215,7 +220,7 @@ aside{position:sticky;top:92px;height:max-content}
 /* No-items (o-que-nao-pode-fazer) */
 .no-item{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
 .no-item:last-child{border-bottom:none}
-.no-icon{width:48px;height:48px;border-radius:12px;background:rgba(155,68,66,.08);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--a);font-family:var(--sf);font-weight:500}
+.no-icon{width:48px;height:48px;border-radius:12px;background:rgba(184,90,59,.08);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--a);font-family:var(--sf);font-weight:500}
 .no-body h3{margin-top:0;font-size:20px}
 .no-body p{margin-top:6px;font-size:15px}
 
@@ -272,3 +277,125 @@ aside{position:sticky;top:92px;height:max-content}
 .bc-sep{color:var(--s);font-size:13px;line-height:1}
 .bc-cur{color:var(--fg);font-weight:500}
 @media(max-width:600px){.bc-i{font-size:11px}}
+
+/* ═══════════════════════════════════════════════════════════
+   v4 — COMPONENTES NOVOS DA HOME CAMPEÃ
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Sticky CTA mobile ─── */
+.sticky-cta{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(120%);z-index:90;background:var(--fg);color:#fff;padding:14px 28px;border-radius:100px;font-size:14px;font-weight:500;box-shadow:0 8px 32px rgba(31,20,16,.25);border:none;cursor:pointer;display:none;align-items:center;gap:10px;transition:transform .35s cubic-bezier(.16,1,.3,1);font-family:var(--sn)}
+.sticky-cta.show{transform:translateX(-50%) translateY(0)}
+.sticky-cta:hover{opacity:.92}
+.sticky-cta svg{width:14px;height:14px}
+@media(max-width:768px){
+  .sticky-cta{display:inline-flex}
+}
+
+/* ─── Smooth scroll com offset (compensa nav fixa) ─── */
+html{scroll-padding-top:80px}
+
+/* ─── SVGs oficiais marketplaces ─── */
+.ch-link{position:relative}
+.ch-amazon .ch-icon,
+.ch-shopee .ch-icon,
+.ch-ml .ch-icon{padding:0;background:#fff;border:1px solid var(--line);overflow:hidden}
+.ch-amazon .ch-icon svg,
+.ch-shopee .ch-icon svg,
+.ch-ml .ch-icon svg{width:100%;height:100%}
+
+/* ─── Card de produto da home (nova seção "Linha Completa") ─── */
+.lc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.lc-card{background:#fff;border-radius:22px;padding:32px 24px 28px;text-align:center;border:1px solid var(--line);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s;position:relative;overflow:hidden}
+.lc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0;transition:opacity .4s}
+.lc-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(31,20,16,.10);border-color:rgba(184,90,59,.25)}
+.lc-card:hover::before{opacity:1}
+.lc-card:hover .lc-mock{transform:scale(1.05)}
+
+.lc-featured{grid-column:span 1;background:linear-gradient(165deg,#fff 0%,#FAF1E5 100%);border:1px solid rgba(184,90,59,.20)}
+.lc-featured .lc-badge{display:inline-block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--a);font-weight:600;background:rgba(184,90,59,.10);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+
+.lc-mockwrap{height:200px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:18px;position:relative}
+.lc-mock{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.lc-mock-img{width:auto;height:180px;object-fit:contain;display:none}
+.lc-mockwrap.has-img .lc-mock-svg{display:none}
+.lc-mockwrap.has-img .lc-mock-img{display:block}
+
+.lc-step{font-family:var(--sf);font-size:11px;color:var(--s);letter-spacing:.22em;text-transform:uppercase;font-style:italic}
+.lc-name{font-family:var(--sf);font-size:30px;font-weight:400;line-height:1;margin-top:6px;color:var(--fg)}
+.lc-fn{font-size:12px;color:var(--s);letter-spacing:.06em;margin-top:6px}
+.lc-msg{font-family:var(--sf);font-size:15px;font-style:italic;color:var(--a);margin-top:14px;font-weight:500;line-height:1.4}
+.lc-desc{font-size:13px;color:var(--m);line-height:1.7;margin-top:10px}
+.lc-cta{margin-top:18px}
+.lc-cta button{width:100%;background:transparent;color:var(--fg);border:1.5px solid var(--line-strong);padding:11px 18px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:all .25s;font-family:var(--sn)}
+.lc-cta button:hover{background:var(--fg);color:#fff;border-color:var(--fg)}
+
+@media(max-width:900px){
+  .lc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .lc-grid{grid-template-columns:1fr;gap:14px}
+  .lc-mockwrap{height:160px}
+  .lc-mock-img{height:140px}
+}
+
+/* ─── Frasco SVG estilizado (mockup premium) ─── */
+.bottle{position:relative;display:inline-block;border-radius:14px 14px 18px 18px;box-shadow:0 12px 36px rgba(31,20,16,.12),0 2px 8px rgba(31,20,16,.06),inset 0 1px 0 rgba(255,255,255,.4);overflow:hidden}
+.bottle::before{content:'';position:absolute;top:8%;left:8%;width:25%;height:60%;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);border-radius:8px;pointer-events:none}
+.bottle::after{content:'';position:absolute;top:0;left:0;right:0;height:14px;background:linear-gradient(180deg,rgba(0,0,0,.12),transparent);border-radius:14px 14px 0 0}
+.bottle-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:14% 8% 10%}
+.bottle-logo{font-family:var(--sf);font-size:9px;letter-spacing:.25em;font-style:italic;opacity:.7;margin-bottom:6px}
+.bottle-name{font-family:var(--sf);font-weight:400;line-height:1;letter-spacing:.01em}
+.bottle-vol{font-size:8px;letter-spacing:.15em;margin-top:auto;opacity:.55}
+
+/* Variações de cor das embalagens */
+.bottle-prep{background:linear-gradient(165deg,#EDE0D0 0%,#D9C8B5 100%);width:120px;height:200px}
+.bottle-prep .bottle-content{color:#3A2818}
+.bottle-heal{background:linear-gradient(165deg,#1F1410 0%,#3A2418 100%);width:130px;height:215px}
+.bottle-heal .bottle-content{color:#E8DDD0}
+.bottle-daily{background:linear-gradient(165deg,#E8D5BE 0%,#C9AC8C 100%);width:120px;height:200px}
+.bottle-daily .bottle-content{color:#3A2818}
+.bottle-protect{background:linear-gradient(165deg,#F0DDC4 0%,#D9BD96 100%);width:120px;height:200px}
+.bottle-protect .bottle-content{color:#3A2818}
+.bottle-revive{background:linear-gradient(165deg,#5C3D2E 0%,#3D2A20 100%);width:120px;height:200px}
+.bottle-revive .bottle-content{color:#E8DDD0}
+
+/* ─── Animação subtle "respirando" no card destaque ─── */
+@keyframes gentle-pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.02)}
+}
+.lc-featured .lc-mock{animation:gentle-pulse 6s ease-in-out infinite}
+
+/* ─── Trust bar: números/credibilidade ─── */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 0}
+.trust-item{text-align:center;padding:0 16px;border-right:1px solid var(--line)}
+.trust-item:last-child{border-right:none}
+.trust-num{font-family:var(--sf);font-size:36px;font-weight:300;color:var(--a);line-height:1;letter-spacing:-.01em}
+.trust-lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--s);margin-top:8px}
+@media(max-width:768px){
+  .trust{grid-template-columns:repeat(2,1fr);gap:24px 0;border:none;padding:24px 0}
+  .trust-item{border:none;padding:8px}
+  .trust-num{font-size:28px}
+}
+
+/* ─── Refinamentos gerais para a paleta nova ─── */
+.bp:hover{box-shadow:0 6px 24px rgba(184,90,59,.25)}
+.cta{background:linear-gradient(155deg,#1F1410,#3A2418)!important}
+.brand-reinforce{background:linear-gradient(155deg,#1F1410,#3A2418)!important}
+.cf{background:linear-gradient(155deg,#1F1410,#3A2418)!important}
+
+/* ─── Quote/blockquote elegante ─── */
+.quote-block{font-family:var(--sf);font-size:24px;font-style:italic;line-height:1.4;color:var(--fg);max-width:640px;margin:0 auto;text-align:center;font-weight:300;letter-spacing:.005em}
+.quote-block::before,.quote-block::after{content:'"';color:var(--a);font-size:60px;line-height:0;vertical-align:-30px;font-family:var(--sf);opacity:.4}
+.quote-block::before{margin-right:8px}
+.quote-block::after{margin-left:4px}
+
+/* ─── Decorative divider gold ─── */
+.gd-div{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto;max-width:120px}
+.gd-div::before,.gd-div::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.gd-div-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ─── Improvements: callout cards ─── */
+.callout{border-left-color:var(--a)!important}
+.alert-ok{border-left-color:#3A6B4C!important}
+.alert-warn{border-left-color:var(--a)!important}

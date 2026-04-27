@@ -116,3 +116,43 @@
     initModal();
   }
 })();
+
+/* ═══════════════════════════════════════════════════════════
+   v4 — Sticky CTA mobile (aparece após scroll)
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+  function initStickyCTA(){
+    var btn = document.getElementById('stickyCTA');
+    if(!btn) return;
+    var lastY = 0;
+    var threshold = 600;
+    var ticking = false;
+
+    function update(){
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      var modal = document.getElementById('buyModal');
+      var modalOpen = modal && modal.classList.contains('open');
+      var menuOpen = document.getElementById('mob') && document.getElementById('mob').classList.contains('open');
+
+      if(y > threshold && !modalOpen && !menuOpen){
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initStickyCTA);
+  } else {
+    initStickyCTA();
+  }
+})();
