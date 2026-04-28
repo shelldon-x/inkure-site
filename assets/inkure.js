@@ -73,7 +73,7 @@
         '</div>'+
         '<div class="ft-bottom">© 2026 Inkure · Todos os direitos reservados.</div>'+
       '</div>'+
-    '</footer>';
+    '</footer>';;
   }
 
   function injectLayout(){
@@ -157,8 +157,14 @@
         var r = footer.getBoundingClientRect();
         footerVisible = r.top < (window.innerHeight - 40);
       }
-      if(y > threshold && !modalOpen && !menuOpen && !footerVisible){ btn.classList.add('show'); }
-      else { btn.classList.remove('show'); }
+      if(y > threshold && !modalOpen && !menuOpen && !footerVisible){
+        btn.classList.add('show');
+        btn.classList.remove('near-footer');
+      } else {
+        btn.classList.remove('show');
+        if(footerVisible) btn.classList.add('near-footer');
+        else btn.classList.remove('near-footer');
+      }
       ticking = false;
     }
     window.addEventListener('scroll', function(){
