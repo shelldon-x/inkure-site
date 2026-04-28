@@ -97,15 +97,15 @@
         '<div class="ch-grid">'+
           '<a href="'+MARKETPLACE_URLS.amazon+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-amazon" data-marketplace="amazon" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/amazon.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Amazon<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Amazon</span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
           '<a href="'+MARKETPLACE_URLS.shopee+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-shopee" data-marketplace="shopee" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/shopee.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Shopee<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Shopee</span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
           '<a href="'+MARKETPLACE_URLS.ml+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-ml" data-marketplace="mercado-livre" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/mercado-livre.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Mercado Livre<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Mercado Livre</span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
         '</div>'+
       '</div>'+

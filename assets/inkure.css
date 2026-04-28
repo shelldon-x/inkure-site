@@ -413,7 +413,7 @@ body{background:var(--bg);color:var(--fg)}
 .ig-link svg{width:14px;height:14px;flex-shrink:0}
 .ch-link{min-height:70px}
 .ch-link .ch-icon img{width:36px;height:36px;border-radius:10px}
-.ch-sub{display:block;font-size:11px;line-height:1.35;color:var(--s);margin-top:2px;font-weight:400}
+
 .ft-site{padding:64px 28px 110px!important;border-top:0!important;background:linear-gradient(155deg,#1F1410,#3A2418)!important;margin-top:56px!important;color:#fff!important}
 .ft-site .ft-inner{max-width:var(--mx);margin:0 auto;display:block!important}
 .ft-main{display:grid;grid-template-columns:1.05fr 2fr;gap:56px;align-items:start}
