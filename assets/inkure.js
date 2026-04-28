@@ -50,17 +50,30 @@
     '<button id="stickyCTA" class="sticky-cta" onclick="openModal()" type="button" aria-label="Onde comprar" data-global-layout="true">'+
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>Onde comprar'+
     '</button>'+
-    '<footer class="ft-site" data-global-layout="true"><div class="ft-inner">'+
-      '<div class="ft-l"><img class="site-logo-icon" src="/assets/logo.svg" alt="" aria-hidden="true"><span>inkure</span></div>'+
-      '<p>© 2026 Inkure · Tattoo skincare premium</p>'+
-      '<div class="ft-k">'+
-        '<a href="https://instagram.com/tattoo.skincare" target="_blank" rel="noopener noreferrer">Instagram</a>'+
-        '<a href="/guia-tatuagem-completo">Guia completo</a>'+
-        '<a href="/#linha">Linha</a>'+
-        '<a href="/#revenda">Revenda</a>'+
-        '<button type="button" onclick="openModal()">Onde comprar</button>'+
+    '<footer class="ft-site" data-global-layout="true">'+
+      '<div class="ft-inner">'+
+        '<div class="ft-main">'+
+          '<div class="ft-brand">'+
+            '<a href="/" class="ft-logo" aria-label="Inkure — início"><img class="site-logo-icon" src="/assets/logo.svg" alt="" aria-hidden="true"><span>inkure</span></a>'+
+            '<p>Tattoo skincare premium para preservar a arte na pele por décadas.</p>'+
+          '</div>'+
+          '<div class="ft-cols">'+
+            '<div class="ft-col"><h4>Navegação</h4><a href="/guia-tatuagem-completo">Guia completo</a><a href="/#linha">Linha completa</a><a href="/tatuagem-cicatrizacao-cuidados">Cicatrização</a><a href="/produtos-para-tatuagem">Produtos</a><a href="/#revenda">Revenda</a></div>'+
+            '<div class="ft-col"><h4>Institucional</h4><a href="/#conceito">Sobre a Inkure</a><a href="/como-cuidar-da-tatuagem">Cuidados</a><button type="button" onclick="openModal()">Onde comprar</button><a href="/melhor-creme-para-tatuagem">Perguntas frequentes</a><a href="mailto:contato@inkure.com.br">Contato</a></div>'+
+            '<div class="ft-col"><h4>Conecte-se</h4><a href="https://instagram.com/tattoo.skincare" target="_blank" rel="noopener noreferrer">Instagram</a></div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="ft-market">'+
+          '<p class="ft-market-title">Onde comprar</p>'+
+          '<div class="ft-buy">'+
+            '<a href="https://www.amazon.com.br/" target="_blank" rel="noopener noreferrer"><span><img src="/assets/icons/amazon.svg" alt=""></span><small>Amazon</small></a>'+
+            '<a href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer"><span><img src="/assets/icons/shopee.svg" alt=""></span><small>Shopee</small></a>'+
+            '<a href="https://www.mercadolivre.com.br/" target="_blank" rel="noopener noreferrer"><span><img src="/assets/icons/mercado-livre.svg" alt=""></span><small>Mercado Livre</small></a>'+
+          '</div>'+
+        '</div>'+
+        '<div class="ft-bottom">© 2026 Inkure · Todos os direitos reservados.</div>'+
       '</div>'+
-    '</div></footer>';
+    '</footer>';
   }
 
   function injectLayout(){
@@ -138,7 +151,13 @@
       var modal = document.getElementById('buyModal');
       var modalOpen = modal && modal.classList.contains('open');
       var menuOpen = document.getElementById('mob') && document.getElementById('mob').classList.contains('open');
-      if(y > threshold && !modalOpen && !menuOpen){ btn.classList.add('show'); }
+      var footer = document.querySelector('.ft-site');
+      var footerVisible = false;
+      if(footer){
+        var r = footer.getBoundingClientRect();
+        footerVisible = r.top < (window.innerHeight - 40);
+      }
+      if(y > threshold && !modalOpen && !menuOpen && !footerVisible){ btn.classList.add('show'); }
       else { btn.classList.remove('show'); }
       ticking = false;
     }
