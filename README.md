@@ -88,12 +88,21 @@ Os HTML foram limpos para não duplicar header, modal e footer. O conteúdo das 
 Antes do deploy, substitua a estrutura atual por este pacote completo.
 
 
-## Ajuste mobile + footer premium
+## Correção de estabilidade — auditoria profunda
 
-Esta versão ajusta as páginas de conteúdo para ficarem menos apertadas no mobile e substitui o footer simples por um footer global escuro, com colunas, links úteis e atalhos para marketplaces.
+Esta versão corrige a desconfiguração causada por CSS corrompido/incompleto na versão anterior.
 
-Arquivos principais alterados:
+O que foi corrigido:
+- Restaurado `assets/inkure.css` completo com reset, `:root`, variáveis, nav, botões, layout de artigo, cards e responsivo.
+- Mantida a estrutura global centralizada via `assets/inkure.js`.
+- Footer premium foi aplicado como patch no final do CSS, sem apagar o design system original.
+- Páginas internas continuam limpas, com header/modal/footer injetados pelo JS global.
+- Sticky CTA some ao chegar no footer para não cobrir links.
+- Páginas em `pages/` e URLs limpas via `vercel.json`.
+
+Arquivos críticos:
 - `assets/inkure.css`
 - `assets/inkure.js`
-
-O HTML das páginas não precisa ser editado para estes ajustes.
+- `vercel.json`
+- `sitemap.xml`
+- `robots.txt`
