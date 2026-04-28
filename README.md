@@ -86,3 +86,14 @@ A logo do header e o favicon ficam em:
 Os HTML foram limpos para não duplicar header, modal e footer. O conteúdo das páginas permanece preservado.
 
 Antes do deploy, substitua a estrutura atual por este pacote completo.
+
+
+## Ajuste mobile + footer premium
+
+Esta versão ajusta as páginas de conteúdo para ficarem menos apertadas no mobile e substitui o footer simples por um footer global escuro, com colunas, links úteis e atalhos para marketplaces.
+
+Arquivos principais alterados:
+- `assets/inkure.css`
+- `assets/inkure.js`
+
+O HTML das páginas não precisa ser editado para estes ajustes.
