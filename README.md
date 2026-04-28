@@ -1,80 +1,88 @@
-# Inkure — pacote SEO final
+# Inkure — estrutura global centralizada
 
-Este pacote consolida a home, o cluster de 18 páginas sobre tattoo care, os assets compartilhados e os arquivos técnicos essenciais para deploy na Vercel.
+Este pacote usa uma estrutura profissional com a raiz limpa e páginas internas dentro de `pages/`.
 
-## Estrutura recomendada
-
-Todos os HTML ficam na raiz do projeto:
+## Mapa de pastas
 
 ```txt
-/
+inkure/
 ├── index.html
 ├── 404.html
-├── guia-tatuagem-completo.html
-├── como-cuidar-da-tatuagem.html
-├── como-hidratar-a-tatuagem.html
-├── como-tatuagem-funciona-na-pele.html
-├── manter-tatuagem-bonita.html
-├── melhor-creme-para-tatuagem.html
-├── o-que-nao-pode-fazer-depois-de-tatuar.html
-├── o-que-passar-na-tatuagem.html
-├── pode-molhar-tatuagem.html
-├── pode-pegar-sol-com-tatuagem.html
-├── produtos-para-tatuagem.html
-├── quanto-tempo-dura-tatuagem.html
-├── quanto-tempo-tatuagem-cicatriza.html
-├── tatuagem-cicatrizacao-cuidados.html
-├── tatuagem-descascando-e-normal.html
-├── tatuagem-faz-mal.html
-├── tatuagem-inflamada.html
-├── tipos-de-pele-tatuagem.html
 ├── robots.txt
 ├── sitemap.xml
 ├── vercel.json
+├── README.md
+│
+├── pages/
+│   ├── guia-tatuagem-completo.html
+│   ├── como-cuidar-da-tatuagem.html
+│   ├── como-hidratar-a-tatuagem.html
+│   ├── como-tatuagem-funciona-na-pele.html
+│   ├── manter-tatuagem-bonita.html
+│   ├── melhor-creme-para-tatuagem.html
+│   ├── o-que-nao-pode-fazer-depois-de-tatuar.html
+│   ├── o-que-passar-na-tatuagem.html
+│   ├── pode-molhar-tatuagem.html
+│   ├── pode-pegar-sol-com-tatuagem.html
+│   ├── produtos-para-tatuagem.html
+│   ├── quanto-tempo-dura-tatuagem.html
+│   ├── quanto-tempo-tatuagem-cicatriza.html
+│   ├── tatuagem-cicatrizacao-cuidados.html
+│   ├── tatuagem-descascando-e-normal.html
+│   ├── tatuagem-faz-mal.html
+│   ├── tatuagem-inflamada.html
+│   └── tipos-de-pele-tatuagem.html
+│
 └── assets/
     ├── inkure.css
-    └── inkure.js
+    ├── inkure.js
+    ├── logo.svg
+    ├── favicon.svg
+    └── icons/
+        ├── amazon.svg
+        ├── shopee.svg
+        └── mercado-livre.svg
 ```
 
-Com `cleanUrls: true`, a Vercel publica `guia-tatuagem-completo.html` como `/guia-tatuagem-completo`.
+## Como funciona
 
-## Sitemaps
+- `index.html`, `404.html`, `robots.txt`, `sitemap.xml` e `vercel.json` ficam na raiz.
+- As páginas internas ficam em `pages/`.
+- O `vercel.json` entrega URLs limpas: `pages/como-cuidar-da-tatuagem.html` abre como `/como-cuidar-da-tatuagem`.
+- O layout global agora é centralizado em `assets/inkure.js`.
 
-Use apenas `sitemap.xml` como sitemap principal. O arquivo antigo `sitemap-conteudo-tatuagem.xml` foi consolidado e deve ser removido do repositório. O `vercel.json` redireciona `/sitemap-conteudo-tatuagem.xml` para `/sitemap.xml` por segurança.
+## Componentes globais centralizados
 
-## Robots
+O arquivo `assets/inkure.js` injeta automaticamente:
 
-O `robots.txt` está aberto para indexação e aponta somente para:
+- header/nav
+- menu mobile
+- modal "Onde comprar"
+- ícones Amazon/Shopee/Mercado Livre
+- footer
+- sticky CTA mobile
+
+A partir de agora, para trocar links do menu, ícones do modal ou footer, edite apenas `assets/inkure.js`.
+
+## Ícones externos
+
+Os SVGs dos marketplaces ficam em:
 
 ```txt
-Sitemap: https://inkure.com.br/sitemap.xml
+/assets/icons/amazon.svg
+/assets/icons/shopee.svg
+/assets/icons/mercado-livre.svg
 ```
 
-Não bloqueie CSS, JS ou imagens. O Google precisa acessar esses recursos para renderizar e avaliar a experiência da página.
+A logo do header e o favicon ficam em:
 
-## Checklist pós-deploy
+```txt
+/assets/logo.svg
+/assets/favicon.svg
+```
 
-1. Substitua os arquivos antigos pelos arquivos deste pacote.
-2. Remova `sitemap-conteudo-tatuagem.xml` do repositório, se existir.
-3. Faça deploy.
-4. Teste:
-   - `https://inkure.com.br/sitemap.xml`
-   - `https://inkure.com.br/robots.txt`
-   - `https://inkure.com.br/guia-tatuagem-completo`
-   - `https://inkure.com.br/como-cuidar-da-tatuagem`
-5. No Google Search Console, envie apenas `https://inkure.com.br/sitemap.xml`.
-6. Solicite indexação da home, da página pilar e de 3 a 5 páginas principais.
+## Importante
 
-## Páginas mais importantes para solicitar indexação primeiro
+Os HTML foram limpos para não duplicar header, modal e footer. O conteúdo das páginas permanece preservado.
 
-1. `/`
-2. `/guia-tatuagem-completo`
-3. `/como-cuidar-da-tatuagem`
-4. `/produtos-para-tatuagem`
-5. `/melhor-creme-para-tatuagem`
-6. `/tatuagem-cicatrizacao-cuidados`
-7. `/pode-pegar-sol-com-tatuagem`
-
-## Observação
-
-O cluster foi organizado com URLs curtas na raiz, página pilar e interlinking. Isso favorece clareza semântica, distribuição de autoridade interna e rastreamento mais simples.
+Antes do deploy, substitua a estrutura atual por este pacote completo.
