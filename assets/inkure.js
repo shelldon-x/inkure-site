@@ -16,8 +16,14 @@
 
   /* ─── Config global ─── */
   var WHATSAPP_NUMBER  = window.INKURE_WHATSAPP_NUMBER  || '5511972416790';
-  var INSTAGRAM_HANDLE = window.INKURE_INSTAGRAM        || 'tattoo.skincare';
+  var INSTAGRAM_HANDLE = window.INKURE_INSTAGRAM || 'inkure.care';
   var EMAIL            = window.INKURE_EMAIL            || 'contato@inkure.com.br';
+  var MARKETPLACE_QUERY = window.INKURE_MARKETPLACE_QUERY || 'inkure tattoo skincare';
+  var MARKETPLACE_URLS = {
+    amazon: 'https://www.amazon.com.br/s?k=' + encodeURIComponent(MARKETPLACE_QUERY),
+    shopee: 'https://shopee.com.br/search?keyword=' + encodeURIComponent(MARKETPLACE_QUERY),
+    ml: 'https://lista.mercadolivre.com.br/' + encodeURIComponent(MARKETPLACE_QUERY).replace(/%20/g,'-')
+  };
 
   /* ─── Microcopy A/B variants ─── */
   var CTA_VARIANTS = {
@@ -68,7 +74,7 @@
         '<a href="/guia-tatuagem-completo">Guia completo</a>'+
         '<a href="/#revenda">Revenda</a>'+
         '<button class="nv-btn" type="button" data-buy-cta data-cta-location="nav-desktop">'+COPY.short+'</button>'+
-        '<a href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer">Instagram</a>'+
+        '<a class="ig-link" href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer" aria-label="Instagram @'+INSTAGRAM_HANDLE+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@'+INSTAGRAM_HANDLE+'</a>'+
       '</div>'+
       '<button class="hb" id="hb" aria-label="Abrir menu" aria-expanded="false" aria-controls="mob"><span></span><span></span><span></span></button>'+
     '</div></nav>'+
@@ -80,7 +86,7 @@
       '<a href="/guia-tatuagem-completo">Guia completo</a>'+
       '<a href="/#revenda">Revenda</a>'+
       '<button type="button" data-action="open-modal" data-buy-cta data-cta-location="nav-mobile">'+COPY.short+'</button>'+
-      '<a href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer">Instagram</a>'+
+      '<a class="ig-link" href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer" aria-label="Instagram @'+INSTAGRAM_HANDLE+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@'+INSTAGRAM_HANDLE+'</a>'+
     '</div>'+
 
     '<div class="modal-overlay" id="buyModal" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle" data-global-layout="true">'+
@@ -89,17 +95,17 @@
         '<h3 id="buyModalTitle">Onde comprar</h3>'+
         '<p>Escolha o canal de compra preferido. Entrega rápida em todo o Brasil.</p>'+
         '<div class="ch-grid">'+
-          '<a href="https://www.amazon.com.br/" target="_blank" rel="noopener noreferrer" class="ch-link ch-amazon" data-marketplace="amazon" data-cta-location="modal">'+
+          '<a href="'+MARKETPLACE_URLS.amazon+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-amazon" data-marketplace="amazon" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/amazon.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Amazon</span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Amazon<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
-          '<a href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" class="ch-link ch-shopee" data-marketplace="shopee" data-cta-location="modal">'+
+          '<a href="'+MARKETPLACE_URLS.shopee+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-shopee" data-marketplace="shopee" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/shopee.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Shopee</span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Shopee<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
-          '<a href="https://www.mercadolivre.com.br/" target="_blank" rel="noopener noreferrer" class="ch-link ch-ml" data-marketplace="mercado-livre" data-cta-location="modal">'+
+          '<a href="'+MARKETPLACE_URLS.ml+'" target="_blank" rel="noopener noreferrer" class="ch-link ch-ml" data-marketplace="mercado-livre" data-cta-location="modal">'+
             '<div class="ch-icon"><img src="/assets/icons/mercado-livre.svg" alt="" width="36" height="36"></div>'+
-            '<span class="ch-name">Mercado Livre</span><span class="ch-arrow" aria-hidden="true">→</span>'+
+            '<span class="ch-name">Mercado Livre<span class="ch-sub">Buscar “Inkure tattoo skincare”</span></span><span class="ch-arrow" aria-hidden="true">→</span>'+
           '</a>'+
         '</div>'+
       '</div>'+
@@ -120,15 +126,15 @@
           '<div class="ft-cols">'+
             '<div class="ft-col"><h4>Navegação</h4><a href="/guia-tatuagem-completo">Guia completo</a><a href="/#linha">Linha completa</a><a href="/tatuagem-cicatrizacao-cuidados">Cicatrização</a><a href="/produtos-para-tatuagem">Produtos</a><a href="/#revenda">Revenda</a></div>'+
             '<div class="ft-col"><h4>Institucional</h4><a href="/#conceito">Sobre a Inkure</a><a href="/como-cuidar-da-tatuagem">Cuidados</a><button type="button" data-buy-cta data-cta-location="footer">'+COPY.short+'</button><a href="/melhor-creme-para-tatuagem">Perguntas frequentes</a><a href="mailto:'+EMAIL+'">Contato</a></div>'+
-            '<div class="ft-col"><h4>Conecte-se</h4><a href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer">Instagram</a></div>'+
+            '<div class="ft-col"><h4>Conecte-se</h4><a class="ig-link" href="https://instagram.com/'+INSTAGRAM_HANDLE+'" target="_blank" rel="noopener noreferrer" aria-label="Instagram @'+INSTAGRAM_HANDLE+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@'+INSTAGRAM_HANDLE+'</a></div>'+
           '</div>'+
         '</div>'+
         '<div class="ft-market">'+
           '<p class="ft-market-title">Onde comprar</p>'+
           '<div class="ft-buy">'+
-            '<a href="https://www.amazon.com.br/" target="_blank" rel="noopener noreferrer" data-marketplace="amazon" data-cta-location="footer-marketplace"><span><img src="/assets/icons/amazon.svg" alt="" width="34" height="34"></span><small>Amazon</small></a>'+
-            '<a href="https://shopee.com.br/" target="_blank" rel="noopener noreferrer" data-marketplace="shopee" data-cta-location="footer-marketplace"><span><img src="/assets/icons/shopee.svg" alt="" width="34" height="34"></span><small>Shopee</small></a>'+
-            '<a href="https://www.mercadolivre.com.br/" target="_blank" rel="noopener noreferrer" data-marketplace="mercado-livre" data-cta-location="footer-marketplace"><span><img src="/assets/icons/mercado-livre.svg" alt="" width="34" height="34"></span><small>Mercado Livre</small></a>'+
+            '<a href="'+MARKETPLACE_URLS.amazon+'" target="_blank" rel="noopener noreferrer" data-marketplace="amazon" data-cta-location="footer-marketplace"><span><img src="/assets/icons/amazon.svg" alt="" width="34" height="34"></span><small>Amazon</small></a>'+
+            '<a href="'+MARKETPLACE_URLS.shopee+'" target="_blank" rel="noopener noreferrer" data-marketplace="shopee" data-cta-location="footer-marketplace"><span><img src="/assets/icons/shopee.svg" alt="" width="34" height="34"></span><small>Shopee</small></a>'+
+            '<a href="'+MARKETPLACE_URLS.ml+'" target="_blank" rel="noopener noreferrer" data-marketplace="mercado-livre" data-cta-location="footer-marketplace"><span><img src="/assets/icons/mercado-livre.svg" alt="" width="34" height="34"></span><small>Mercado Livre</small></a>'+
           '</div>'+
         '</div>'+
         '<div class="ft-bottom">© 2026 Inkure · Todos os direitos reservados.</div>'+
