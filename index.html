@@ -154,6 +154,20 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Guias Inkure sobre cuidados com tatuagem","description":"Cluster de conteúdo da Inkure sobre tattoo skincare, cicatrização, hidratação, proteção solar, produtos e preservação visual da tatuagem.","itemListElement":[{"@type":"ListItem","position":1,"url":"https://inkure.com.br/guia-tatuagem-completo","name":"Guia completo da tatuagem"},{"@type":"ListItem","position":2,"url":"https://inkure.com.br/como-cuidar-da-tatuagem","name":"Como cuidar da tatuagem"},{"@type":"ListItem","position":3,"url":"https://inkure.com.br/tatuagem-cicatrizacao-cuidados","name":"Cicatrização da tatuagem"},{"@type":"ListItem","position":4,"url":"https://inkure.com.br/o-que-passar-na-tatuagem","name":"O que passar na tatuagem"},{"@type":"ListItem","position":5,"url":"https://inkure.com.br/melhor-creme-para-tatuagem","name":"Melhor creme para tatuagem"},{"@type":"ListItem","position":6,"url":"https://inkure.com.br/pode-pegar-sol-com-tatuagem","name":"Pode pegar sol com tatuagem?"},{"@type":"ListItem","position":7,"url":"https://inkure.com.br/manter-tatuagem-bonita","name":"Como manter a tatuagem bonita"}]}</script>
 </head>
 <body>
+<!-- Nav fallback: aparece se JS falhar/demorar. Some quando JS injeta layout real. -->
+<nav class="nv-fallback" aria-label="Navegação simplificada">
+  <div class="nv-fallback-i">
+    <a href="/">inkure</a>
+    <a href="https://www.amazon.com.br/" class="nv-fallback-cta" target="_blank" rel="noopener noreferrer">Onde comprar</a>
+  </div>
+</nav>
+<noscript>
+  <style>.lc-mock-svg{display:flex!important}.rv{opacity:1!important;transform:none!important}</style>
+  <div style="background:#B85A3B;color:#fff;padding:14px 24px;text-align:center;font-size:13px;position:relative;z-index:100">
+    Para a melhor experiência da Inkure, ative o JavaScript no seu navegador.
+  </div>
+</noscript>
+
 <!-- ═══════════════════════════════════════════════════════
      NAV
      ═══════════════════════════════════════════════════════ -->
@@ -171,18 +185,18 @@
 <section class="hero sc"><div class="si"><div class="hg">
 <div class="rv">
 <p class="tg">Tattoo Skincare Premium · Antes, durante e depois</p>
-<h1 style="margin-top:18px">Você cuida da sua tatuagem…<br/><em>só no começo?</em></h1>
+<h1 style="margin-top:18px">Você cuida da sua tatuagem…<span class="block"><em>só no começo?</em></span></h1>
 <p class="bt" style="max-width:500px">
       A tatuagem envelhece com a pele. Sol, ressecamento, atrito e falta de proteção podem comprometer cor, contraste e definição com o tempo. A Inkure nasce como um sistema completo de tattoo skincare para preservar a presença visual da sua arte todos os dias.
     </p>
 <div class="hc">
-<button class="bp bp-lg" onclick="openModal()" type="button">Onde comprar →</button>
+<button class="bp bp-lg" data-buy-cta data-cta-location="page" type="button">Onde comprar →</button>
 <a class="bo" href="/guia-tatuagem-completo" style="padding:15px 36px;font-size:15px">Ler guia completo</a>
 </div>
 <div class="ht">
-<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Vegano</span>
-<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Cruelty-free</span>
-<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Fórmula brasileira</span>
+<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Vegano</span>
+<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Cruelty-free</span>
+<span class="ht-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Fórmula brasileira</span>
 </div>
 </div>
 <div class="rv" style="transition-delay:.2s">
@@ -243,6 +257,20 @@
 <!-- ═══════════════════════════════════════════════════════
      CONCEITO — o novo padrão
      ═══════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════
+     TRUST BAR — credibilidade
+     (números são placeholders — ajustar quando tiver dados reais)
+     ═══════════════════════════════════════════════════════ -->
+<section class="sc" style="padding-top:60px;padding-bottom:60px">
+<div class="si rv">
+<div class="trust">
+<div class="trust-item"><div class="trust-num">+30 anos</div><div class="trust-lbl">Mercado de tatuagem</div></div>
+<div class="trust-item"><div class="trust-num">5.000+</div><div class="trust-lbl">Clientes atendidos</div></div>
+<div class="trust-item"><div class="trust-num">100%</div><div class="trust-lbl">Vegano e cruelty-free</div></div>
+<div class="trust-item"><div class="trust-num">5</div><div class="trust-lbl">Etapas do sistema</div></div>
+</div>
+</div>
+</section>
 <section class="sc" id="conceito">
 <div class="si ct rv" style="max-width:680px">
 <p class="tg">O novo padrão</p>
@@ -309,7 +337,7 @@
 <p class="lc-fn">Antes da sessão</p>
 <p class="lc-msg">A preparação define o resultado.</p>
 <p class="lc-desc">Prepara e condiciona a pele antes da sessão, ajudando a criar uma base mais confortável e equilibrada para o procedimento e para o resultado visual da tatuagem.</p>
-<div class="lc-cta"><button onclick="openModal()" type="button">Onde comprar</button></div>
+<div class="lc-cta"><button data-buy-cta data-cta-location="page" type="button">Onde comprar</button></div>
 </article>
 <!-- 02 HEAL — destaque -->
 <article class="lc-card lc-featured rv" style="transition-delay:.06s">
@@ -331,7 +359,7 @@
 <p class="lc-fn">Cicatrização ativa</p>
 <p class="lc-msg">Os primeiros dias definem tudo.</p>
 <p class="lc-desc">Cuidado pós-tatuagem para a fase inicial: ajuda a manter hidratação, conforto e proteção da barreira cutânea no período em que a pele exige mais atenção.</p>
-<div class="lc-cta"><button onclick="openModal()" type="button">Onde comprar</button></div>
+<div class="lc-cta"><button data-buy-cta data-cta-location="page" type="button">Onde comprar</button></div>
 </article>
 <!-- 03 DAILY -->
 <article class="lc-card rv" style="transition-delay:.12s">
@@ -352,7 +380,7 @@
 <p class="lc-fn">Cuidado contínuo</p>
 <p class="lc-msg">O cuidado não termina. Evolui.</p>
 <p class="lc-desc">Hidratação leve para uso diário. Ajuda a manter a pele com toque saudável e a tatuagem com aparência mais viva, bonita e presente na rotina.</p>
-<div class="lc-cta"><button onclick="openModal()" type="button">Onde comprar</button></div>
+<div class="lc-cta"><button data-buy-cta data-cta-location="page" type="button">Onde comprar</button></div>
 </article>
 <!-- 04 PROTECT -->
 <article class="lc-card rv" style="transition-delay:.18s">
@@ -373,7 +401,7 @@
 <p class="lc-fn">Barreira UV</p>
 <p class="lc-msg">O sol é o maior inimigo da cor.</p>
 <p class="lc-desc">Proteção para o dia a dia. Ajuda a defender a pele tatuada dos efeitos do sol e dos fatores externos que aceleram perda de cor, contraste e definição.</p>
-<div class="lc-cta"><button onclick="openModal()" type="button">Onde comprar</button></div>
+<div class="lc-cta"><button data-buy-cta data-cta-location="page" type="button">Onde comprar</button></div>
 </article>
 <!-- 05 REVIVE -->
 <article class="lc-card rv" style="transition-delay:.24s">
@@ -394,11 +422,11 @@
 <p class="lc-fn">Tratamento intensivo</p>
 <p class="lc-msg">Sua tatuagem pode parecer melhor do que hoje.</p>
 <p class="lc-desc">Tratamento sensorial para tatuagens antigas, opacas ou sem presença. Ajuda a melhorar o aspecto visual, resgatar contraste e devolver sensação de vitalidade à pele tatuada.</p>
-<div class="lc-cta"><button onclick="openModal()" type="button">Onde comprar</button></div>
+<div class="lc-cta"><button data-buy-cta data-cta-location="page" type="button">Onde comprar</button></div>
 </article>
 </div>
 <div class="ct rv" style="margin-top:56px;transition-delay:.3s">
-<button class="bp bp-lg" onclick="openModal()" type="button">Adquirir a linha completa →</button>
+<button class="bp bp-lg" data-buy-cta data-cta-location="page" type="button">Adquirir a linha completa →</button>
 </div>
 </div>
 </section>
@@ -535,7 +563,7 @@
 <h2 class="h2" style="margin-top:14px">Disponível nos<br/>principais marketplaces</h2>
 <p class="bt">Compre a linha Inkure nos principais marketplaces do Brasil, com praticidade, segurança e entrega facilitada para manter sua tattoo bem cuidada todos os dias.</p>
 <div style="margin-top:32px">
-<button class="bp bp-lg" onclick="openModal()" type="button">Onde comprar →</button>
+<button class="bp bp-lg" data-buy-cta data-cta-location="page" type="button">Onde comprar →</button>
 </div>
 <div class="gd-div" style="margin-top:40px"><span class="gd-div-dot"></span></div>
 <p style="font-size:11px;color:var(--soft);margin-top:24px;letter-spacing:.04em">Amazon · Shopee · Mercado Livre</p>
@@ -553,7 +581,7 @@
 <p class="bt" style="max-width:600px;margin:18px auto 0">Se você é tatuador, possui um estúdio ou atua no varejo de beleza, ofereça aos seus clientes uma linha criada para transformar cuidado pós-tatuagem em rotina contínua de preservação.</p>
 </div>
 <div class="form-wrap rv" style="transition-delay:.12s">
-<form id="revendaForm" onsubmit="sendWhatsApp(event)">
+<form id="revendaForm">
 <div class="form-grid">
 <div class="form-group">
 <label for="fname">Nome *</label>
@@ -573,7 +601,8 @@
 </div>
 <div class="form-group">
 <label for="fwhats">WhatsApp *</label>
-<input id="fwhats" placeholder="(00) 00000-0000" required="" type="tel"/>
+<input id="fwhats" placeholder="(00) 00000-0000" required pattern="[\(\) 0-9+\-]{10,20}" type="tel" aria-describedby="fwhats-hint"/>
+<small id="fwhats-hint" style="font-size:11px;color:var(--s);margin-top:2px">DDD + número, com ou sem parênteses</small>
 </div>
 <div class="form-group">
 <label for="ftipo">Perfil</label>
@@ -598,17 +627,17 @@
      ═══════════════════════════════════════════════════════ -->
 <section class="cf">
 <div class="cf-content rv">
-<svg aria-hidden="true" fill="none" height="35" viewbox="0 0 50 80" width="22">
+<svg aria-hidden="true" fill="none" height="35" viewBox="0 0 50 80" width="22">
 <path d="M25 4C23 12 15 28 15 38C15 43.5 19.5 48 25 48C30.5 48 35 43.5 35 38C35 28 27 12 25 4Z" stroke="#E8DDD0" stroke-linejoin="round" stroke-width="1.8"></path>
 <line stroke="#E8DDD0" stroke-linecap="round" stroke-width="1.5" x1="25" x2="25" y1="48" y2="68"></line>
 <circle cx="25" cy="62" fill="none" r="2.2" stroke="#E8DDD0" stroke-width="1.3"></circle>
 </svg>
 <h2 class="h2" style="margin-top:28px">Mais do que pós-tatuagem.<br/>Um novo padrão para preservar sua arte.</h2>
 <p class="bt">Sua tatuagem merece cuidado depois da primeira semana. Conheça a linha criada para manter cor, definição, contraste e presença visual ao longo do tempo.</p>
-<button class="bw" onclick="openModal()" style="margin-top:44px" type="button">Onde comprar →</button>
+<button class="bw" data-buy-cta data-cta-location="page" style="margin-top:44px" type="button">Onde comprar →</button>
 <div style="margin-top:20px">
 <a class="bi" href="https://instagram.com/tattoo.skincare" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="16">
+<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="16">
 <rect height="20" rx="5" width="20" x="2" y="2"></rect>
 <circle cx="12" cy="12" r="5"></circle>
 <circle cx="17.5" cy="6.5" fill="currentColor" r="1.5" stroke="none"></circle>
@@ -658,6 +687,11 @@ function sendWhatsApp(e){
   window.open(url,'_blank');
   document.getElementById('revendaForm').reset();
 }
+// Wire form com listener (mais limpo que onsubmit inline)
+document.addEventListener('DOMContentLoaded', function(){
+  var form = document.getElementById('revendaForm');
+  if(form) form.addEventListener('submit', sendWhatsApp);
+});
 </script>
 <script defer="True" src="/assets/inkure.js"></script></body>
 </html>
