@@ -1,8 +1,4 @@
-# Inkure — Tattoo Skincare Premium
-# robots.txt — versão final SEO
-
 User-agent: *
 Allow: /
 
-# Sitemaps
 Sitemap: https://inkure.com.br/sitemap.xml
