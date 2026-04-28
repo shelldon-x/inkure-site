@@ -399,3 +399,12 @@ html{scroll-padding-top:80px}
 .callout{border-left-color:var(--a)!important}
 .alert-ok{border-left-color:#3A6B4C!important}
 .alert-warn{border-left-color:var(--a)!important}
+
+
+/* ═══════════════════════════════════════════════════════════
+   Layout global injetado por JS — logos e ícones externos
+   ═══════════════════════════════════════════════════════════ */
+.nv-l .site-logo-icon{width:16px;height:26px;display:block}
+.ft-l .site-logo-icon{width:10px;height:16px;display:block}
+.ch-icon img{width:100%;height:100%;display:block;object-fit:contain}
+.global-layout-ready .nv{display:block}
